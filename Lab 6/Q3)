@@ -1,0 +1,36 @@
+class WashingMachine
+{
+    void switchOn()
+    {
+        System.out.println("Washing Machine is switched ON");
+    }
+
+    int acceptClothes(int noOfClothes)
+    {
+        System.out.println(noOfClothes + " clothes accepted");
+        return noOfClothes;
+    }
+
+    void acceptDetergent()
+    {
+        System.out.println("Detergent accepted");
+    }
+
+    void switchOff()
+    {
+        System.out.println("Washing Machine is switched OFF");
+    }
+}
+
+public class WashingMachineDemo
+{
+    public static void main(String[] args)
+    {
+        WashingMachine wm = new WashingMachine();
+
+        wm.switchOn();
+        int clothes = wm.acceptClothes(6);
+        wm.acceptDetergent();
+        wm.switchOff();
+    }
+}
