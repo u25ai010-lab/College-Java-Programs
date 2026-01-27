@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class TotalProfit
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number of attendees: ");
+        int attendees = scanner.nextInt();
+
+        double Price = 5.0;
+        double fixedCost = 20.0;
+        double costPerAttendee = 0.5;
+
+        double income = Price * attendees;
+        double totalCost = fixedCost + (costPerAttendee * attendees);
+        double totalProfit = income - totalCost;
+
+        System.out.println("Total Income = $" + income);
+        System.out.println("Total Cost = $" + totalCost);
+        System.out.println("Total Profit = $" + totalProfit);
+    }
+}
