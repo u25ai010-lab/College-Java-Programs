@@ -1,0 +1,36 @@
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Q5
+{
+    public static void main(String[] args) throws IOException
+    {
+        FileReader fileReader = new FileReader("src/data.txt");
+        int str;
+        String text = "";
+
+        while((str = fileReader.read()) != -1)
+        {
+            text = text + (char)str;
+        }
+        fileReader.close();
+
+        char[] arr = text.toCharArray();
+
+        for(int i = 1 ; i < arr.length ; i++)
+        {
+            if(arr[i-1] == ' ')
+            {
+                if(arr[i] == 'h' && arr[i+1] == 'i' && arr[i+2] == 's')
+                {
+                    arr[i+1] = 'e';
+                    arr[i+2] = 'r';
+                }
+
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+        }
+    }
+}
