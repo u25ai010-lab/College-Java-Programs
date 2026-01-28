@@ -1,0 +1,36 @@
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+
+public class Q2
+{
+    public static void main(String[] args) throws IOException
+    {
+        FileReader fileReader = new FileReader("src/data.txt");
+        int  ch ;
+        int count = 0;
+
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("src/data.txt"));
+        String line;
+
+        while ((line = bufferedReader.readLine()) != null) {
+            System.out.println(line);
+        }
+
+        br.close();
+
+        while((ch = fileReader.read()) != -1 )
+        {
+            count++;
+
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U'  )
+            {
+                System.out.println("Letter = " + (char) ch);
+                System.out.println("Location = " + count);
+            }
+        }
+        fileReader.close();
+
+
+    }
+}
