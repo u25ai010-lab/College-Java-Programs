@@ -1,0 +1,29 @@
+import java.util.Random;
+
+public class MonteCarlo {
+    public static void main(String[] args){
+
+        Random random = new Random();
+        int n = 100000;
+        int count = 0;
+
+        for(int i = 0 ; i < n ; i++)
+        {
+            double x = random.nextDouble();
+            double y = random.nextDouble();
+
+            if(x > 0.5 && y > 0.5)
+            {
+                count++;
+            }
+
+            else if(x < 0.5 && y < 0.5)
+            {
+                count ++;
+            }
+        }
+
+        double probability = (double) count/n ;
+        System.out.println(probability);
+    }
+}
