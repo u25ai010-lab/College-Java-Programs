@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class MinimumRunwayLength
+{
+    public static void main(String []args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("ENTER THE AIRPLANE'S ACCELERATION(in m/s²):");
+        double a = scanner.nextDouble();
+        System.out.print("ENTER THE AIRPLANE'S TAKE-OFF SPEED(in m/s):");
+        double v = scanner.nextDouble();
+        double l = Math.pow(v,2)/(2*a);
+        System.out.println("MINIMUM RUNWAY LENGTH FOR AIRPLANE IS: "+l+" m");
+        scanner.close();
+    }
+}
