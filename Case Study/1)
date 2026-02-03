@@ -1,35 +1,17 @@
-class Matrix3D {
-
-    static int sizeX = 3;
-    static int sizeY = 3;
-    static int sizeZ = 3;
-
-    static void set(int value, int indexX, int indexY, int indexZ, int[] oneDArray) {
-        int index = indexX * (sizeY * sizeZ)
-                + indexY * sizeZ
-                + indexZ;
-
-        oneDArray[index] = value;
-    }
-
-    static int get(int indexX, int indexY, int indexZ, int[] oneDArray) {
-        int index = indexX * (sizeY * sizeZ)
-                + indexY * sizeZ
-                + indexZ;
-
-        return oneDArray[index];
-    }
-
-    public static void main(String[] args) {
-
-        int[] oneDArray = new int[sizeX * sizeY * sizeZ];
-
-        set(5, 0, 0, 0, oneDArray);
-        set(15, 1, 2, 1, oneDArray);
-        set(25, 2, 1, 2, oneDArray);
-
-        System.out.println(get(0, 0, 0, oneDArray));
-        System.out.println(get(1, 2, 1, oneDArray));
-        System.out.println(get(2, 1, 2, oneDArray));
+import java.util.Scanner;
+public class AverageVelocity
+{
+    public static void main(String []args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("ENTER THE INITIAL VELOCITY V1(in m/s):");
+        double v1 = scanner.nextDouble();
+        System.out.print("ENTER THE FINAL VELOCITY V0(in m/s):");
+        double v0 = scanner.nextDouble();
+        System.out.print("ENTER THE TIME ELAPSED(in s):");
+        double time = scanner.nextDouble();
+        double acceleration = (v0-v1)/time;
+        System.out.println("THE AVERAGE ACCELERATION IS: "+acceleration+" m/s²");
+        scanner.close();
     }
 }
