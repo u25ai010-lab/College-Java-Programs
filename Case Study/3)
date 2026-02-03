@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class EnergyNeeded
+{
+    public static void main(String []args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("ENTER THE INITIAL TEMPERATURE(in °C):");
+        double initialTemperature = scanner.nextDouble();
+        System.out.print("ENTER THE FINAL TEMPERATURE(in °C):");
+        double finalTemperature = scanner.nextDouble();
+        System.out.print("ENTER THE MASS OF WATER(in KG):");
+        double massOfWater = scanner.nextDouble();
+        double Q = massOfWater*(finalTemperature-initialTemperature)*4184;
+        System.out.println("THE ENERGY NEEDED IS: "+Q+" Joules");
+        scanner.close();
+    }
+}
