@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+class NotHex extends Exception {
+    NotHex(String msg) {
+        super(msg);
+    }
+}
+
+public class Hexadecimal {
+
+    static void check(String num) throws NotHex {
+
+        for (int i = 0; i < num.length(); i++) {
+            char ch = num.charAt(i);
+
+            if (!((ch >= '0' && ch <= '9') ||
+                    (ch >= 'A' && ch <= 'F') ||
+                    (ch >= 'a' && ch <= 'f'))) {
+
+                throw new NotHex("Not a Hexadecimal Number");
+            }
+        }
+
+        System.out.println("It is a Hexadecimal Number");
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the hexadecimal number: ");
+        String num = scanner.next();
+
+        try {
+            check(num);
+        }
+        catch (NotHex e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        System.out.println("Ending the program");
+    }
+}
