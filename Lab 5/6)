@@ -1,0 +1,59 @@
+import javax.naming.Name;
+import java.util.Scanner;
+
+class Person
+{
+    String Name;
+    int Maths , Physics , Chemistery;
+
+    public Person(String Name, int Maths,int Physics , int Chemistery)
+    {
+        this.Name = Name;
+        this.Maths = Maths;
+        this.Physics = Physics;
+        this.Chemistery = Chemistery;
+    }
+
+    public double average()
+    {
+        return (Maths + Physics + Chemistery)/3;
+    }
+
+    public String getName()
+    {
+        return Name;
+    }
+}
+
+
+public class Student {
+
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter your Name :");
+        String Name = scanner.next();
+
+        System.out.println("Enter marks in Maths : ");
+        int Maths = scanner.nextInt();
+
+        System.out.println("Enter marks in Physics : ");
+        int Physics = scanner.nextInt();
+
+        System.out.println("Enter marks in Chemistery : ");
+        int Chemistery = scanner.nextInt();
+
+        Person person = new Person(Name , Maths , Physics , Chemistery);
+
+        System.out.println("Name : " + person.Name);
+        System.out.println("Average : " + person.average());
+
+        if(person.average() >= 50)
+            System.out.println("Passed");
+        else
+            System.out.println("Failed");
+
+        scanner.close();
+    }
+}
