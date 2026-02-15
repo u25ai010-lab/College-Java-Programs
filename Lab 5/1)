@@ -1,0 +1,107 @@
+import java.util.Scanner;
+
+class Overflow extends Exception
+{
+    public Overflow(String msg)
+    {
+        super(msg);
+    }
+}
+
+class Underflow extends Exception
+{
+    public Underflow(String msg)
+    {
+        super(msg);
+    }
+}
+
+
+interface QueueImpl
+{
+    void insert(int data) throws Overflow;
+    int delete() throws Underflow;
+    void display();
+}
+
+class Queue implements QueueImpl
+{
+
+    private int[] array = new int[10];
+    private int front = -1;
+    private int rear = -1;
+    private final int MAX = 10;
+
+    @Override
+    public void display()
+    {
+        for(int i = front ; i <= rear ; i++)
+        {
+            System.out.println(array[i] + "");
+        }
+
+        System.out.println();
+    }
+
+    @Override
+    public int delete() throws Underflow
+    {
+        if(front == -1 || front > rear)
+        {
+            throw new Underflow("Queue is empty");
+        }
+
+        int deleted = array[front];
+        front++;
+        System.out.println("The gonr person is :" +deleted);
+        return deleted;
+    }
+
+    @Override
+    public void insert(int data) throws Overflow
+    {
+        if(rear == MAX -1)
+        {
+            throw new Overflow("Queue is Full");
+        }
+
+        if(front == -1)
+        {
+            front = 0;
+        }
+
+        rear++;
+        array[rear] = data;
+        System.out.println(data + " has come");
+
+    }
+
+}
+
+public class QueueDemo
+{
+    public static void main(String[] args)
+    {
+        Queue queue = new Queue();
+
+        try{
+            for(int i = 0; i < 10 ; i++)
+            {
+                queue.insert(i);
+            }
+        } catch (Overflow e) {
+            System.out.println(e.getMessage());
+        }
+
+        queue.display();
+
+        try{
+            for(int i = 0 ; i < 10 ; i++)
+            {
+                queue.delete();
+            }
+        } catch (Underflow e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
