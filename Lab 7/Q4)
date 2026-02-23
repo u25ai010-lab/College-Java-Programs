@@ -20,8 +20,7 @@ class Student extends Teacher {
     int rollnumber;
     String course;
 
-    Student(String name, int age, String department,
-            int rollnumber, String course) {
+    Student(String name, int age, String department ,int rollnumber, String course) {
 
         super(name, age, department); 
         this.rollnumber = rollnumber;
