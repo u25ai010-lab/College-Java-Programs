@@ -1,0 +1,64 @@
+class Book {
+
+    int id;
+    String name;
+    String writer;
+    double cost;
+
+    Book(int i, String n, String w, double c) {
+        id = i;
+        name = n;
+        writer = w;
+        cost = c;
+    }
+
+    void show() {
+        System.out.println("ID: " + id);
+        System.out.println("Book: " + name);
+        System.out.println("By: " + writer);
+        System.out.println("Costs: " + cost);
+    }
+}
+
+class Periodical extends Book {
+
+    String type;
+
+    Periodical(int i, String n, String w, double c, String t) {
+        super(i, n, w, c);
+        type = t;
+    }
+
+    void change(double newCost, String newType) {
+        cost = newCost;
+        type = newType;
+    }
+
+    void show() {
+        super.show();
+        System.out.println("Type: " + type);
+        System.out.println("------------------");
+    }
+}
+
+public class Q3 {
+
+    public static void main(String args[]) {
+
+        Periodical periodical = new Periodical(
+                101,
+                "Me You & Java",
+                "John JAVA",
+                250,
+                "Monthly"
+        );
+
+        System.out.println("Before changing:");
+        periodical.show();
+
+        periodical.change(300, "Weekly");
+
+        System.out.println("\nAfter changing:");
+        periodical.show();
+    }
+}
