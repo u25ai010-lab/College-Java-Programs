@@ -1,0 +1,52 @@
+class Teacher {
+    String name;
+    int age;
+    String department;
+
+    Teacher(String name, int age, String department) {
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+
+    void display()
+    {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Department: " + department);
+    }
+}
+class Student extends Teacher {
+    int rollnumber;
+    String course;
+
+    Student(String name, int age, String department,
+            int rollnumber, String course) {
+
+        super(name, age, department); 
+        this.rollnumber = rollnumber;
+        this.course = course;
+    }
+
+    void display() {
+        display();
+        System.out.println("Roll Number: " + rollnumber);
+        System.out.println("Course: " + course);
+    }
+}
+
+
+public class Q4 {
+    public static void main(String[] args) {
+
+        Student student = new Student(
+                "Bholu",
+                19,
+                "Artificial Intelligence",
+                13,
+                "B.Tech"
+        );
+
+        student.display();
+    }
+}
