@@ -1,0 +1,32 @@
+class Bank {
+
+    double deposit(double amount, double balance) {
+        return balance + amount;
+    }
+
+    double withdraw(double amount, double balance) {
+        if (balance >= amount) {
+            return balance - amount;
+        } else {
+            return 0;
+        }
+    }
+}
+
+public class Bank1 {
+    public static void main(String[] args) {
+
+        Bank b = new Bank();
+
+        double balance = 1000;
+
+        balance = b.deposit(500, balance);
+        System.out.println("After deposit: " + balance);
+
+        balance = b.withdraw(300, balance);
+        System.out.println("After withdrawal: " + balance);
+
+        balance = b.withdraw(1500, balance);
+        System.out.println("After invalid withdrawal: " + balance);
+    }
+}
